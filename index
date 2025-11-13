@@ -1,150 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Change Request Form</title>
-  <style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MedNet Connect Jordan</title>
 
-    
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #f4f4f4;
-    }
-    form {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 600px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    label {
-      font-weight: bold;
-      display: block;
-      margin-top: 15px;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    textarea {
-      resize: vertical;
-    }
-    button {
-      margin-top: 20px;
-      padding: 10px 15px;
-      background: #FF4B04;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #FF4B04;
-    }
-  </style>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("./MedNet.jpg");
+            background-size: contain; /* Ensure the entire image fits within the viewport */
+            background-position: top center; /* Align the image to the top center */
+            background-repeat: no-repeat;
+            min-height: 100vh; /* Ensure the body covers the entire viewport height */
+        }
+
+        .container {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            color: white; /* Assuming text needs to be white for visibility on the background */
+        }
+
+        /* Mobile styles */
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+        }
+
+        /* Tablet styles */
+        @media (min-width: 601px) and (max-width: 900px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 1.2em;
+            }
+        }
+
+        /* Desktop styles */
+        @media (min-width: 901px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            p {
+                font-size: 1.5em;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <h2>Change Request Form</h2>
-  <form action="/submit-form" method="post">
-    <label for="requestType">Request Type</label>
-    <input type="text" id="requestType" name="requestType" required>
+<div class="container">
+    <!-- Content goes here -->
+</div>
 
-    <label for="requestDate">Request Date</label>
-    <input type="date" id="requestDate" name="requestDate" required>
+<script type="text/javascript" charset="utf-8">
+  (function (g, e, n, es, ys) {
+    g['_genesysJs'] = e;
+    g[e] = g[e] || function () {
+      (g[e].q = g[e].q || []).push(arguments)
+    };
+    g[e].t = 1 * new Date();
+    g[e].c = es;
+    ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
+  })(window, 'Genesys', 'https://apps.mypurecloud.de/genesys-bootstrap/genesys.min.js', {
+    environment: 'prod-euc1',
+    deploymentId: 'd2773ccb-76b4-46b3-8cdd-1d8e1c7a607b'
+  });
+</script>
 
-    <label for="requestorName">Requestor Name</label>
-    <input type="text" id="requestorName" name="requestorName" required>
+<script>
+    // Function to detect if the device is mobile
+    function isMobileDevice() {
+        return /Mobi|Android|iPhone/i.test(navigator.userAgent);
+    }
 
-    <label for="campaignName">Department/ location</label>
-    <input type="text" id="campaignName" name="campaignName" required>
+    // Apply specific styles or scripts based on the device
+    window.addEventListener('DOMContentLoaded', function() {
+        if (isMobileDevice()) {
+            document.body.style.backgroundColor = 'lightblue';
+            // Add any other mobile-specific functionality here
+        } else {
+            // Web-specific functionality
+            document.body.style.backgroundColor = '';
+        }
+    });
 
-    <label for="justification">Description of the change</label>
-    <textarea id="justification" name="justification" rows="10" required></textarea>
-
- 
-
-    <label for="changeDate">Requested Date to Change</label>
-    <input type="date" id="changeDate" name="changeDate" required>
-
-    <label for="newCampaignType">Reason for the change</label>
-    <input type="text" id="newCampaignType" name="newCampaignType" required>
-
-    <label for="newCampaignType">Change requestor signature</label>
-    <input type="text" id="newCampaignType" name="newCampaignType" required>
-
-    <label for="newCampaignType">Approval of request</label>
-    <input type="text" id="newCampaignType" name="newCampaignType" required>
-
-    <label for="newCampaignType">Change Type</label>
-    <input type="text" id="newCampaignType" name="newCampaignType" required>
-
-    <label for="priority">Change Priority</label>
-    <select id="priority" name="priority" required>
-      <option value="">-- Select Priority --</option>
-      <option value="High">High</option>
-      <option value="Medium">Medium</option>
-      <option value="Low">Low</option>
-    </select>
-
-    <label for="impact">Change Impact</label>
-    <select id="impact" name="impact" required>
-      <option value="">-- Select Change Impact --</option>
-      <option value="Minor">Minor</option>
-      <option value="Medium">Medium</option>
-      <option value="Major">Major</option>
-    </select>
-
-    <label for="newCampaignType">Environment(s) Impacted</label>
-    <input type="text" id="newCampaignType" name="newCampaignType" required>
-
-    <label for="newCampaignType">Resource requirements: (Personnel, HW, SW)</label>
-    <input type="text" id="newCampaignType" name="newCampaignType" required>
-
-    <label for="newCampaignType">Implementation assigned to (names)</label>
-    <input type="text" id="newCampaignType" name="newCampaignType" required>
-
-    <label for="newCampaignType">Test Plan Description</label>
-    <input type="text" id="newCampaignType" name="newCampaignType" required>
-
-    <label for="newCampaignType">Rollback Description</label>
-    <input type="text" id="newCampaignType" name="newCampaignType" required>
-
-    <label for="newCampaignType">Comments</label>
-    <input type="text" id="newCampaignType" name="newCampaignType" required>
-
-    <label for="newCampaignType">Change Request Status</label>
-    <input type="text" id="newCampaignType" name="newCampaignType" required>
-
-    <label for="newCampaignType">Change scheduled for (date)</label>
-    <input type="text" id="newCampaignType" name="newCampaignType" required>
-
-    <label for="newCampaignType">Signature</label>
-    <input type="text" id="newCampaignType" name="newCampaignType" required>
-
-    <label for="newCampaignType">Implementation test results</label>
-    <input type="text" id="newCampaignType" name="newCampaignType" required>
-
-    <label for="newCampaignType">Implementer sign-off</label>
-    <input type="text" id="newCampaignType" name="newCampaignType" required>
-
-    <label for="newCampaignType">Requester sign-off</label>
-    <input type="text" id="newCampaignType" name="newCampaignType" required>
-
-    <label for="justification">Justification</label>
-    <textarea id="justification" name="justification" rows="4" required></textarea>
-
-    
-    <label for="approverName">Approver Name</label>
-    <input type="text" id="approverName" name="approverName" required>
-
- 
-
-    <button type="submit">Submit Request</button>
-  </form>
+    // Example JavaScript to add mobile-specific functionality on resize
+    window.addEventListener('resize', function() {
+        if (isMobileDevice() || window.innerWidth < 600) {
+            document.body.style.backgroundColor = 'lightblue';
+        } else {
+            document.body.style.backgroundColor = '';
+        }
+    });
+</script>
 
 </body>
 </html>
